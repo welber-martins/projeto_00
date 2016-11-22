@@ -21,7 +21,19 @@ $sql = "SELECT * FROM contratos ORDER BY id DESC";
 <div class="container">
   <h2><strong><center>Contratos</center></strong></h2></br></br>
   <!--Onde insere o nome da empresa -->
+
     <form action="cliente/db_contratos.php" method="POST">
+
+    <select name="cliente_id" class="form-control">
+        <?php
+        mysqli_set_charset($conn, 'utf8');
+         $result = $conn->query("SELECT * FROM cliente");
+         while ($aux_query = $result->fetch_assoc()){
+          echo '<option> '.$aux_query["empresa"].'';
+           }
+        ?>
+    </select><br>
+
         <div class="col-xs-7">
           <label for="nome">Descrição:</label>
           <input class="form-control" type="text" name="numero" size="20" placeholder="Descrição" required></br>
