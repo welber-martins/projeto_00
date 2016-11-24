@@ -24,15 +24,31 @@ $sql = "SELECT * FROM contratos ORDER BY id DESC";
 
     <form action="cliente/db_contratos.php" method="POST">
 
-    <select name="cliente_id" class="form-control">
+  <!--  <label  for='</select>' >Book Club: </label><br/>
+    <?php/*
+    $result = $conn->query("SELECT * FROM cliente ORDER BY id DESC ");
+    echo "<select name='cliente_id'>";
+    while ($aux_query = $result->fetch_assoc()) {
+    echo "<option value='" . $aux_query["empresa"] . "'>" . $aux_query["empresa"] . "</option>";
+    }
+    echo "</select>";
+    */?><br><br> -->
+
+
+
+     Selecione a Categoria: 
+        <select id="cliente_id" name="cliente_id" class="form-control">
+          <option value = ""></option>
         <?php
-        mysqli_set_charset($conn, 'utf8');
-         $result = $conn->query("SELECT * FROM cliente");
-         while ($aux_query = $result->fetch_assoc()){
-          echo '<option> '.$aux_query["empresa"].'';
-           }
-        ?>
-    </select><br>
+          $sql="SELECT * FROM cliente ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vempresa=$vreq[1];
+            echo "<option value=$vid>$vempresa</option>";
+          }
+        ?> 
+        </select><br> 
 
         <div class="col-xs-7">
           <label for="nome">Descrição:</label>

@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="utf-8">
+	<meta charset="iso-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Editar Contato</title>
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
