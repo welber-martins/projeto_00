@@ -8,10 +8,10 @@ mysqli_set_charset($conn, 'utf8');
 
 
 $des = $_POST['descricao'];
+$idd =$_POST['categoria_id'];
 
-
-	$stmt = $conn->prepare("INSERT INTO subcategoria (descricao) VALUES (?)");
-	$stmt->bind_param('s', $des);
+	$stmt = $conn->prepare("INSERT INTO subcategoria VALUES (NULL, '$des', '$idd')");
+	$stmt->bind_param('ss', $des, $idd);
 	if(!$stmt->execute()) {
 		$erro = $stmt->error;
 	} else {
