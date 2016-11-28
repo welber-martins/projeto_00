@@ -8,10 +8,10 @@ mysqli_set_charset($conn, 'utf8');
 
 
 $numero=$_POST['numero'];
-$id =$_POST['cliente_id'];
+$idd =$_POST['cliente_id'];
 
-	$stmt = $conn->prepare("INSERT INTO contratos VALUES (NULL, '$numero', '$id')");
-	$stmt->bind_param('ss', $numero, $id);
+	$stmt = $conn->prepare("INSERT INTO contratos VALUES (NULL, '$numero', '$idd')");
+	$stmt->bind_param('ss', $numero, $idd);
 	if(!$stmt->execute()) {
 		$erro = $stmt->error;
 	} else {

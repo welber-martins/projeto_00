@@ -47,7 +47,7 @@
 
 				    </fieldset>
 			    </form>
-			    <br><a href="../index.php"> Voltar</a><br>
+			    <br><a href="../contratos.php"> Voltar</a><br>
 			</div>
 		</div>
 	</div>

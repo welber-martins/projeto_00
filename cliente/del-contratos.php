@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,7 +34,7 @@
                 echo "<h3>Você deseja deletar esses dados?</h3>";
 
                 //echo "id : <b>".$aux_query['id']."<b><br>";
-                echo "contratos : <b>".$aux_query['numero']."<b><br>";
+                echo "Contrato : <b>".$aux_query['numero']."<b><br>";
 
 
                 echo "<a href=\"dados_del_cont.php?id=".$aux_query['id']."\" class=\"btn btn-large btn-success\"> Sim</a>&nbsp;&nbsp;";
@@ -87,3 +86,4 @@
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+

@@ -12,3 +12,5 @@
 	header("location: ../contratos.php");
 
  ?>
+
+ 
