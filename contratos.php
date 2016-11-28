@@ -24,19 +24,7 @@ $sql = "SELECT * FROM contratos ORDER BY id DESC";
 
     <form action="cliente/db_contratos.php" method="POST">
 
-  <!--  <label  for='</select>' >Book Club: </label><br/>
-    <?php/*
-    $result = $conn->query("SELECT * FROM cliente ORDER BY id DESC ");
-    echo "<select name='cliente_id'>";
-    while ($aux_query = $result->fetch_assoc()) {
-    echo "<option value='" . $aux_query["empresa"] . "'>" . $aux_query["empresa"] . "</option>";
-    }
-    echo "</select>";
-    */?><br><br> -->
-
-
-
-     Selecione a Categoria: 
+     Selecione o Cliente: 
         <select id="cliente_id" name="cliente_id" class="form-control">
           <option value = ""></option>
         <?php

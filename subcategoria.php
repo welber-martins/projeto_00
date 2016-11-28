@@ -22,6 +22,20 @@ $sql = "SELECT * FROM subcategoria ORDER BY id DESC";
   <h2><strong><center>Subcategorias</center></strong></h2></br></br>
   <!--Onde insere o nome da empresa -->
     <form action="despesas/db_subcategoria.php" method="POST">
+    Selecione a Categoria: 
+        <select id="categoria_id" name="categoria_id" class="form-control">
+          <option value = ""></option>
+        <?php
+          $sql="SELECT * FROM categoria ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vdescricao=$vreq[1];
+            echo "<option value=$vid>$vdescricao</option>";
+          }
+        ?> 
+        </select><br> 
+
         <div class="col-xs-7">
           <label for="nome">Descrição:</label>
           <input class="form-control" type="text" name="descricao" size="20" placeholder="Descrição" required></br>

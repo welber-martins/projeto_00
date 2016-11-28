@@ -20,35 +20,37 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
   <div class="row">
     <h2><strong><center>Agendar</center></strong></h2></br></br>
 
+    <form action="despesas/db_agenda.php" method="POST">
+
       <!--A tabela de demonstração -->
     <div class="col-xs-12">
     <label for="nome">Empresa:</label>
-    <select class="form-control">
-      <!--Começa o CRUD -->
+    <select id="cliente_id" name="cliente_id" class="form-control">
         <?php
-        mysqli_set_charset($conn, 'utf8');
-         $result = $conn->query("SELECT * FROM cliente");
-         while ($aux_query = $result->fetch_assoc()){
-          echo '<option> '.$aux_query["empresa"].'';
-           }
-        ?>
-
-       </select>
+          $sql="SELECT * FROM cliente ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vempresa=$vreq[1];
+            echo "<option value=$vid>$vempresa</option>";
+          }
+        ?> 
+        </select>
        </div>
        <div class="col-xs-12">
        <label for="nome">Contrato:</label>
-       <select class="form-control">
-      <!--Começa o CRUD -->
+       <select id="contratos_id" name="contratos_id" class="form-control">
         <?php
-        mysqli_set_charset($conn, 'utf8');
-         $result = $conn->query("SELECT * FROM contratos");
-         while ($aux_query = $result->fetch_assoc()){
-          echo '<option> '.$aux_query["numero"].'';
-           }
-        ?>
-        </select>
-       </div>
-<form action="despesas/db_agenda.php" method="POST">
+          $sql="SELECT * FROM contratos ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vnumero=$vreq[1];
+            echo "<option value=$vid>$vnumero</option>";
+          }
+        ?> 
+        </select> 
+
       <div class="col-xs-4">
       <label for="sobrenome">Valor:</label>
         <input class="form-control" name="valor" type="text" value="" id="valor" onKeyPress="return BloqueiaLetras(event)" size="10" maxlength="10" >
@@ -56,14 +58,14 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
 
       <div class="col-xs-4">
       <label for="meeting">Vencimento:</label>
-      <input class="form-control" id="meeting" name="vencimeto" type="date" value="2016-01-01"/>
+      <input class="form-control" id="data" name="data" type="date" value="2016-01-01"/>
     </div>
     <div class="col-xs-4">
         <label for="nome">Arquivo:</label>
-        <input class="form-control" type="file" name="arquivo" required>
+        <input class="form-control" type="file" name="arquivo" >
       </div><br>
     <div class="buttom">
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/>
       <p>
         <input type="submit" class="btn btn-primary btn-lg"  value="Enviar" name="enviar">
       </p>
