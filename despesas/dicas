@@ -1,0 +1,56 @@
+$categorias = array(1 => 'Apartamento', 2 => 'Casa', 3 => 'Ilha');
+
+<select>
+foreach($categorias as $key => $value) {
+	<option value="$key">$value</option>
+}
+</select>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Descrição</th>
+		<th></th>
+	</tr>
+	foreach($categorias as $key => $value) {
+		<tr>
+			<td><?php echo $key; ?></td>
+			<td>$value</td>
+			<td><a href="categoria.php?id=$key">Editar</a></td>
+		</tr>
+	}
+</table>
+
+onKeyPress="return BloqueiaLetras(event)"
+
+
+die( $query );
+
+
+$query = "INSERT INTO recebimento (cliente_id, contratos_id, valor, vencimento) VALUES ('$idd', '$idcon', '$valor', '$date')";
+
+
+	die( $query );
+
+	// Executa a query
+	$inserir = mysql_query($query);
+	if ($inserir) {
+	echo "Notícia inserida com sucesso!";
+	} else {
+	echo "Não foi possível inserir a notícia, tente novamente.";
+	// Exibe dados sobre o erro:
+	echo "Dados sobre o erro:" . mysql_error();
+	}
+
+
+
+	$valor = $_POST['valor'];
+$idd = $_POST['cliente_id'];
+$idcon = $_POST['contratos_id'];
+$date = date("Y-m-d", strtotime($_POST['vencimento']));
+
+
+
+
+
+
