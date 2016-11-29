@@ -53,12 +53,12 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
 
       <div class="col-xs-4">
       <label for="sobrenome">Valor:</label>
-        <input class="form-control" name="valor" type="text" value="" id="valor" onKeyPress="return BloqueiaLetras(event)" size="10" maxlength="10" >
+        <input class="form-control" name="valor" type="text" value="" id="valor" size="10" maxlength="10" >
       </div>
 
       <div class="col-xs-4">
       <label for="meeting">Vencimento:</label>
-      <input class="form-control" id="data" name="data" type="date" value="2016-01-01"/>
+      <input class="form-control" id="vencimento" name="vencimento" type="date" value="2016-01-01"/>
     </div>
     <div class="col-xs-4">
         <label for="nome">Arquivo:</label>
