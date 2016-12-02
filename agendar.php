@@ -20,7 +20,7 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
   <div class="row">
     <h2><strong><center>Agendar</center></strong></h2></br></br>
 
-    <form action="despesas/db_agenda.php" method="POST">
+<form action="despesas/db_agenda.php" method="POST">
 
       <!--A tabela de demonstração -->
     <div class="col-xs-12">
@@ -55,7 +55,6 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
       <label for="sobrenome">Valor:</label>
         <input class="form-control" name="valor" type="text" value="" id="valor" size="10" maxlength="10" >
       </div>
-
       <div class="col-xs-4">
       <label for="meeting">Vencimento:</label>
       <input class="form-control" id="vencimento" name="vencimento" type="date" value="2016-01-01"/>
@@ -71,8 +70,8 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
       </p>
      </div>
 
+   </div>
   </div>
-</div>
 </form>
 
 <?php include("front/rodape.php");?>

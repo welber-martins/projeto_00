@@ -51,7 +51,7 @@
       <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Análise e relatório<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Fluxo de caixa</a></li>
+            <li><a href="analise.php">Fluxo de caixa</a></li>
           </ul>
         </li>
         </ul>

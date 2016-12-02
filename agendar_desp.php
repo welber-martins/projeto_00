@@ -24,51 +24,54 @@ $sql = "SELECT * FROM despesas ORDER BY id DESC";
     <form action="despesas/des_db.php" method="POST">
     <div class="col-xs-12">
     <label for="nome">Categoria:</label>
-    <select class="form-control">
-      <!--Começa o CRUD -->
+    <select id="categoria_id" name="categoria_id" class="form-control">
+          <option value = ""></option>
         <?php
-        mysqli_set_charset($conn, 'utf8');
-         $result = $conn->query("SELECT * FROM categoria");
-         while ($aux_query = $result->fetch_assoc()){
-          echo '<option> '.$aux_query["descricao"].'';
-           }
-        ?>
-
-       </select>
+          $sql="SELECT * FROM categoria ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vdescricao=$vreq[1];
+            echo "<option value=$vid>$vdescricao</option>";
+          }
+        ?> 
+        </select><br>
        </div>
        <div class="col-xs-12">
        <label for="nome">Subcategoria:</label>
-       <select class="form-control">
-      <!--Começa o CRUD -->
-      <?php
-      mysqli_set_charset($conn, 'utf8');
-       $result = $conn->query("SELECT * FROM subcategoria");
-       while ($aux_query = $result->fetch_assoc()){
-         echo '<option> '.$aux_query["descricao"].'';
-           }
-        ?>
-        </select>
+       <select id="subcategoria_id" name="subcategoria_id" class="form-control">
+          <option value = ""></option>
+        <?php
+          $sql="SELECT * FROM subcategoria ORDER BY id DESC";
+          $res =mysqli_query($conn, $sql);
+          while ($vreq = mysqli_fetch_row($res)) {
+            $vid=$vreq[0];
+            $vdescricao=$vreq[1];
+            echo "<option value=$vid>$vdescricao</option>";
+          }
+        ?> 
+        </select><br>
        </div>
 
 
 
       <div class="col-xs-4">
       <label for="meeting">Vencimento:</label>
-      <input class="form-control" id="meeting" name="vencimento" type="date" value="2016-01-01"/>
+      <input class="form-control" id="meeting" name="data_pagamento" id="data_pagamento" type="date" value="2016-01-01"/>
     </div>
 
     <div class="col-xs-4">
       <label for="sobrenome">Valor:</label>
-        <input class="form-control" name="valor" type="text" value="" id="valor" onKeyPress="return BloqueiaLetras(event)" size="10" maxlength="10" >
+        <input class="form-control" name="valor" type="text" id="valor"  size="10" maxlength="10" >
       </div>
       <div class="col-xs-4">
         <label for="nome">Arquivo:</label>
-        <input class="form-control" type="file" name="arquivo" required>
+        <input class="form-control" type="file" name="arquivo">
       </div><br>
 
       <div class="form-group">
         <label for="comment">Descrição:</label>
-        <textarea class="form-control" rows="3" id="comment"></textarea>
+        <textarea class="form-control" rows="3" name="observacao" id="observacao"></textarea>
       </div>
 
     <div class="buttom">
