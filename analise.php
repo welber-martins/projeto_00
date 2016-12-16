@@ -70,6 +70,7 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
         echo '<tr>';
         //echo '<td> '.$aux_query["id"].'';
         echo '<td> '.$aux_query["empresa"].'';
+        //echo '<td> '.$aux_query["vencimento"].'';
        }
       ?>
     </tbody>
@@ -87,7 +88,6 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
          <th abbr="Sexta"   title="Sexta"><b>Sexta</b></th>
          <th abbr="Sábado"  title="Sábado"><b>Sábado</b></th>
          <th abbr="Domingo" title="Domingo"><b <?php echo("$domingo");?>>Domingo</b></th>
-      
 
     </tr>
   </thead>

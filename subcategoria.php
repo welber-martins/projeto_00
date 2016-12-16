@@ -24,7 +24,7 @@ $sql = "SELECT * FROM subcategoria ORDER BY id DESC";
     <form action="despesas/db_subcategoria.php" method="POST">
     Selecione a Categoria: 
         <select id="categoria_id" name="categoria_id" class="form-control">
-          <option value = ""></option>
+          <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM categoria ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);

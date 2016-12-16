@@ -20,12 +20,13 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
   <div class="row">
     <h2><strong><center>Agendar</center></strong></h2></br></br>
 
-<form action="despesas/db_agenda.php" method="POST">
+<form action="despesas/db_agenda.php" method="POST" enctype="multipart/form-data">
 
       <!--A tabela de demonstração -->
     <div class="col-xs-12">
     <label for="nome">Empresa:</label>
     <select id="cliente_id" name="cliente_id" class="form-control">
+    <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM cliente ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);
@@ -35,11 +36,14 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
             echo "<option value=$vid>$vempresa</option>";
           }
         ?> 
+
+        
         </select>
        </div>
        <div class="col-xs-12">
        <label for="nome">Contrato:</label>
        <select id="contratos_id" name="contratos_id" class="form-control">
+       <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM contratos ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);
@@ -61,7 +65,7 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
     </div>
     <div class="col-xs-4">
         <label for="nome">Arquivo:</label>
-        <input class="form-control" type="file" name="arquivo" >
+        <input class="form-control" type="file" name="descricao"  multiple="multiple" >
       </div><br>
     <div class="buttom">
       <br/><br/><br/><br/>

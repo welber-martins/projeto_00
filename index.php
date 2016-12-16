@@ -38,7 +38,7 @@
 	</div>
 </div>
 
-<?php include("../front/rodape.php");?>
+<?php include("front/rodape.php");?>
 
 </body>
 </html>

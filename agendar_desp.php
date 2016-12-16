@@ -18,14 +18,14 @@ $sql = "SELECT * FROM despesas ORDER BY id DESC";
 <?php include("principal.php");?>
 <div class="container">
   <div class="row">
-    <h2><strong><center>Agendar</center></strong></h2></br></br>
+    <h2><strong><center>Agendar</center></strong></h2></br>
 
       <!--A tabela de demonstração -->
-    <form action="despesas/des_db.php" method="POST">
+    <form action="despesas/des_db.php" method="POST" enctype="multipart/form-data">
     <div class="col-xs-12">
     <label for="nome">Categoria:</label>
     <select id="categoria_id" name="categoria_id" class="form-control">
-          <option value = ""></option>
+          <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM categoria ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);
@@ -40,7 +40,7 @@ $sql = "SELECT * FROM despesas ORDER BY id DESC";
        <div class="col-xs-12">
        <label for="nome">Subcategoria:</label>
        <select id="subcategoria_id" name="subcategoria_id" class="form-control">
-          <option value = ""></option>
+          <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM subcategoria ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);
@@ -66,7 +66,7 @@ $sql = "SELECT * FROM despesas ORDER BY id DESC";
       </div>
       <div class="col-xs-4">
         <label for="nome">Arquivo:</label>
-        <input class="form-control" type="file" name="arquivo">
+        <input class="form-control" type="file" name="descricao">
       </div><br>
 
       <div class="form-group">
@@ -85,7 +85,6 @@ $sql = "SELECT * FROM despesas ORDER BY id DESC";
 </div>
 </form>
 
-<?php include("front/rodape.php");?>
 
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="bootstrap/js/novo.js"></script>

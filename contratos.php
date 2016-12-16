@@ -26,7 +26,7 @@ $sql = "SELECT * FROM contratos ORDER BY id DESC";
 
      Selecione o Cliente: 
         <select id="cliente_id" name="cliente_id" class="form-control">
-          <option value = ""></option>
+          <option value="0">-- Selecione --</option>
         <?php
           $sql="SELECT * FROM cliente ORDER BY id DESC";
           $res =mysqli_query($conn, $sql);
