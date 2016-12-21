@@ -5,7 +5,11 @@
  $requete = "SELECT * FROM  ORDER BY id";
  
  // connexion à la base de données
- include "../conexao/conn.php";
+ try {
+ $conn = new PDO('mysql:host=localhost;dbname=mydb', 'root', '1234');
+ } catch(Exception $e) {
+ exit('Impossible de se connecter à la base de données.');
+ }
 
  // exécution de la requête
  $resultat = $conn->query($requete) or die(print_r($conn->errorInfo()));

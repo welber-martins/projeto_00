@@ -3,7 +3,7 @@
 include_once("conexao/conn.php");
 
 
-$sql = "SELECT * FROM recebimento ORDER BY id DESC";
+$sql = "SELECT * FROM recebimento ORDER BY vencimento DESC";
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@ $sql = "SELECT * FROM recebimento ORDER BY id DESC";
 <?php include("principal.php");?>
 <div class="container">
   <div class="row">
-
+<h2><strong><center>Entrada</center></strong></h2></br></br>
 <form action="despesas/db_agenda.php" method="POST">
 	<table class="table table-striped table-bordered">
   <thead>
